@@ -1,0 +1,25 @@
+{
+  "_id": ObjectId("5a14039e50fb020c4f4a980a"),
+  "store_location": "Khayelitsha",
+  "stock": 100,
+  "customers": [{
+    "name": "Anele",
+    "customer_location": "Philipi",
+    "_id": ObjectId("5a14039e50fb020c4f4a980c")
+  }, {
+    "name": "rendani",
+    "customer_location": "Eersteriver",
+    "_id": ObjectId("5a14039e50fb020c4f4a980b")
+  }],
+  "__v": 0
+} {
+  "_id": ObjectId("5a14039e50fb020c4f4a980d"),
+  "store_location": "Langa",
+  "stock": 100,
+  "customers": [{
+    "name": "Ali",
+    "customer_location": "Nyanga",
+    "_id": ObjectId("5a14039e50fb020c4f4a980e")
+  }],
+  "__v": 0
+}
