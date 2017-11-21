@@ -31,7 +31,6 @@ module.exports = function(models) {
     models.shops.find({}, {
       _id: 0,
       __v: 0,
-      store_location: 0,
       stock: 0
     }, function(err, possibleLoc) {
       if (err) {
