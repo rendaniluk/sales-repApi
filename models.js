@@ -7,7 +7,11 @@ module.exports = function(mongoURL) {
   const shopsApiSchema = mongoose.Schema({
     store_location: String,
     stock: Number,
-    customers_locations: Array
+    customer_locations : [{
+      name : String,
+      counter : Number
+    }]
+    //locations_counter: Number
   });
 
   shopsApiSchema.index({

@@ -50,18 +50,82 @@ module.exports = function(models) {
     })
   }
 
+
+
+
   const addCustomer = function(req, res, next) {
-    var tyre_stores = {
+
+    var locationFrom = req.body.customers_locations;
+
+    var theLocation = {
+      name : locationFrom,
+      counter : 1
+    };
+
+    var tyre_store = {
       store_location: req.body.store_location,
       stock: req.body.stock,
-      customers_locations: req.body.customers_locations
+      customer_locations: [theLocation]
+      //locations_counter: 1
     }
 
-    models.shops.create(tyre_stores, function(err, addStores) {
+    models.shops.findOne({
+      store_location: tyre_store.store_location,
+      // stock: tyre_store.stock,
+      // customers_locations: tyre_store.customers_locations
+    }, function(err, findResult) {
+
+      console.log("=====");
+      console.log(findResult);
+      console.log("=====");
+
       if (err) {
-        return next(err)
+        console.log(err);
+        return next(err);
+      } else if (findResult !== null) {
+          console.log(findResult);
+
+        var currentLocation = findResult.customer_locations
+          .find(function(loc){
+            return loc.name === locationFrom;
+          });
+
+        if (currentLocation){
+          currentLocation.counter++;
+        }
+        else{
+          findResult.customer_locations.push(theLocation);
+        }
+
+        /*
+        console.log(findResult);
+        findResult.locations_counter = findResult.locations_counter + 1;
+        */
+
+        findResult.save(function (err, results) {
+          if (err){
+            return next(err);
+          }
+          //console.log(err);
+          //console.log(results);
+
+          res.json(results);
+
+        });
+
       } else {
-        res.json(addStores)
+
+        models.shops.create(tyre_store, function (err, results) {
+          if (err){
+            return next(err);
+          }
+          //console.log(err);
+          //console.log(results);
+
+          res.json(results);
+
+        });
+
       }
     })
   }
