@@ -66,6 +66,8 @@ app.get('/api/shops/customers/location', shops_apiRoutes.customerLocation);
 
 
 app.post('/api/shops', shops_apiRoutes.addCustomer);
+app.post('/api/shops/:shop_name', shops_apiRoutes.deductStock);
+app.post('/api/shops/:shop_name/add/:stockadd', shops_apiRoutes.upDateStock);
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {
