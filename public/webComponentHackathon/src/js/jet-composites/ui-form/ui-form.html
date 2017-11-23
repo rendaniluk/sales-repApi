@@ -1,0 +1,73 @@
+<!-- ko foreach: sections -->
+<h4 class="oj-header-border" data-bind="text: title"></h4>
+<section class="oj-form-control-group">
+	<div class="oj-flex oj-flex-items-pad" data-bind="foreach: fields">
+		<div class="oj-flex-item" data-bind="css: flexItem">
+			<!-- ko switch: type -->
+
+			<!-- ko case: 'hidden' -->
+			<!-- /ko -->
+
+			<!-- ko case: 'text' -->
+			<label data-bind="text: label, attr: {'for': id}"></label>
+			<input data-bind="ojComponent: { component: 'ojInputText', value: observable, required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker, rootAttributes: {style: 'max-width: 100%'}}, attr: { 'id': id, 'type': type, 'placeholder': placeholder, 'disabled': disabled}" />
+			<!-- /ko -->
+
+			<!-- ko case: 'select' -->
+			<label data-bind="text: label, attr: {'for': id}"></label>
+			<select data-bind="ojComponent: { component: 'ojSelect', options: options, value: observable, placeholder: 'Select one', required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker, minimumResultsForSearch: 0, rootAttributes: {style: 'max-width: 100%'}}, attr: { 'id': id, 'disabled': disabled}"></select>
+			<!-- /ko -->
+
+			<!-- ko case: 'combobox' -->
+			<label data-bind="text: label, attr: {'for': id}"></label>
+			<input data-bind="ojComponent: { component: 'ojCombobox', options: options, value: observable, placeholder: 'Select one', required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker, minimumResultsForSearch: 0, rootAttributes: {style: 'max-width: 100%'}}, attr: { 'id': id, 'disabled': disabled}"></select>
+			<!-- /ko -->
+
+			<!-- ko case: 'group' -->
+			<label data-bind="text: label, attr: {'for': id}"></label>
+			<div class="oj-flex oj-flex-items-pad">
+				<!-- ko foreach: inputfields -->
+				<div class="oj-flex-item" data-bind="css: flexItem">
+
+				<!-- ko if: type == 'text' -->
+				<input data-bind="ojComponent: { component: 'ojInputText', value: observable, required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker}, attr: {'id': id, 'placeholder': placeholder, 'disabled': disabled}" />
+				<!-- /ko -->
+
+				<!-- ko if: type == 'select' -->
+				<select data-bind="ojComponent: { component: 'ojSelect', options: options, value: observable, placeholder: 'Select one', required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker, minimumResultsForSearch: 0}, attr: {'id': id, 'disabled': disabled}"></select>
+				<!-- /ko -->
+
+				</div>
+				<!-- /ko -->
+			</div>
+			<!-- /ko -->
+
+			<!-- ko case: 'email' -->
+			<label data-bind="text: label, attr: {'for': id}"></label>
+			<input data-bind="ojComponent: { component: 'ojInputText', value: observable, validators: [$parents[1].validation.emailFormat], required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker, rootAttributes: {style: 'max-width: 100%'}}, attr: { 'id': id, 'type': type, 'placeholder': placeholder, 'disabled': disabled}" />
+			<!-- /ko -->
+
+			<!-- ko case: 'address' -->
+			<input data-bind="ojComponent: { component: 'ojInputText', value: observable, required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker, rootAttributes: {style: 'max-width: 100%'}}, attr: { 'id': id, 'placeholder': placeholder, 'disabled': disabled}" />
+			<!-- /ko -->
+
+			<!-- ko case: 'textarea' -->
+			<label data-bind="text: label, attr: {'for': id}"></label>
+			<textarea style="height: 100px;" data-bind="ojComponent: { component: 'ojInputText', value: observable, required: isRequired, rootAttributes: {style: 'max-width: 100%'}}, attr: { 'id': id, 'type': 'text', 'placeholder': placeholder, 'disabled': disabled}"></textarea>
+			<!-- /ko -->
+
+			<!-- ko case: 'addressbook' -->
+			<label data-bind="text: label, attr: {'for': id}"></label></br>
+			<data-search data-bind="attr: { 'addressbook': '{{$data}}', 'validation': '{{$parents[1].validation}}' }" ></data-search>
+			<!-- /ko -->
+
+			<!-- ko case: 'date' -->
+			<label data-bind="text: label, attr: {'for': id}"></label></br>
+			<input data-bind="ojComponent: { component: 'ojInputDate', value: observable, converter: $parents[1].dateConverter, required: isRequired, invalidComponentTracker: $parents[1].validationComponentTracker, rootAttributes: {style: 'max-width: 100%'}}, attr: { 'id': id, 'placeholder': placeholder, 'disabled': disabled}" />
+			<!-- /ko -->
+
+			<!-- /ko -->
+		</div>
+	</div>
+</section>
+<!-- /ko

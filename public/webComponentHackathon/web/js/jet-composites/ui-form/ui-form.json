@@ -1,0 +1,13 @@
+{
+    "name": "ui-form",
+    "description": "A input field for an entry/add form",
+    "version": "1.0.0",
+    "properties":  {
+        "sections": {
+          "type": "object"
+        },
+        "validation": {
+          "type": "object"
+        }
+    }
+}

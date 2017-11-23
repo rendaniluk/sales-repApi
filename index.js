@@ -21,7 +21,7 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-app.use(express.static('public'));
+app.use(express.static('public/webComponentHackathon/web'));
 
 app.use(logger("dev"));
 app.use(bodyParser.urlencoded({

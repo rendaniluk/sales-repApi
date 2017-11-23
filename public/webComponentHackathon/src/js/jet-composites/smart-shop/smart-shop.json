@@ -1,0 +1,13 @@
+{
+    "name": "smart-shop",
+    "description": "Example component for Oracle JET",
+    "version": "1.0.0",
+    "properties":  {
+        "example": {
+            "type": "object"
+        },
+        "sample": {
+            "type": "string"
+        }
+    }
+}

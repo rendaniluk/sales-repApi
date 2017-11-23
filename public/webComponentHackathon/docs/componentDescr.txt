@@ -1,0 +1,64 @@
+Login:
+ 
+Input: user input in LoginDialog
+·         AIS Url (store in localStorage)
+·         JDE User ID (store in localStorage)
+·         JDE Password (store in sessionStorage)
+Output:
+·         AIS Url in localStorage (browser persistent)
+·         JDE User ID in localStorage
+·         JDE Password in sessionStorage (server-side session persistent)
+·         Environment in sessionStorage (retrieved from /defaultconfig)
+·         Webserver in sessionStorage (retrieved from /defaultconfig)
+·         Ais Version in sessionStorage (retrieved from /defaultconfig)
+·         Token in sessionStorage (retrieved from /tokenrequest)
+·         User Name in sessionStorage (retireved from W01012B /formservice, using addressNumber from /tokenrequest if available)
+ 
+ConnectionManager keeps modal LoginDialog blocking the App functionality until there is a Token present in localStorage (login successful).
+ConnectionManager displays login detail information and a Disconnect button when a Token is present in localStorage.
+There is a progress bar indication of system activity when Connecting (retrieving token) or Disconnecting (performing /logout).
+ 
+In my React project these are two separate components ConnectionManager and LoginDialog.
+ 
+ 
+Data Table:
+ 
+Input:
+·         Title – String value for table title display
+·         Columns – Object array with column meta information:
+o    id: the column identifier that matches field names in the data object
+o    numeric: boolean resulting in right or left aligning
+o    padding: boolean for using padding or not
+o    label: column header tekst
+o    width: column width
+·         Data – Object array with data records
+·         OrderBy – Default column id for initial sorting
+·         Order – Initial sorting specification ‘asc’ or ‘desc’
+·         Selection – Boolean to activate selection checkboxes and selection functions as Delete, Edit, Copy
+·         Theme – React using material-ui supports a ‘light’ or ‘dark’ look and feel theme
+·         Transparent – Boolean to activate transparent component display
+·         Pagination – Boolean to activate pagination functionality
+·         OnDelete – Callback function when select action Delete was used
+·         OnEdit – Callback function when select action Edit was used
+·         OnCopy – Callback function when select action Copy was used
+ 
+Output: Display of data in table.
+ 
+There is a progress circle indication of system activity when retrieving data.
+ 
+In my React project this is component DataTable.
+ 
+ 
+Menu:
+Application bar title, branding and menu access. Also, theme toggle is managed here.
+ 
+Input:
+·         Open Menu – Boolean to toggle menu display
+·         Menu Choice – Current selected menu option
+·         Dark Theme – Boolean to mark ‘dark’ theme as current (‘light’ is default)
+·         OnChange – Callback function to manage current theme and menu selection (to state)
+ 
+Output:
+·         Theme and Menu options (in state) to manage functional component rendering.
+ 
+In my React project this is component NavigationBar.

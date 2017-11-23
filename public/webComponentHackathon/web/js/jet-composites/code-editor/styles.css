@@ -1,0 +1,7 @@
+jet-builder:not(.oj-complete){
+  visibility: hidden;
+}
+
+jet-builder{
+
+}

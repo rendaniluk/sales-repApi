@@ -1,0 +1,7 @@
+.fa-check, .fa-search{
+  cursor: pointer;
+}
+
+.oj-table-data-cell.oj-selected {
+    background-color: #c8c8bc;
+}

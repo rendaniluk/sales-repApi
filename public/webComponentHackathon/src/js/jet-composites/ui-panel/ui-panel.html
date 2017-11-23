@@ -1,0 +1,14 @@
+<div class="ui-panel-progressbar" data-bind=" attr: {'id': progressId}"></div>
+<oj-collapsible expanded='true' expand-area="disclosureIcon">
+<div class="ui-panel-title" data-bind="css: titleClass">
+    <h3 data-bind="text: title"></h3>
+    <div class="ui-panel-toolbar"  style="float: right" >
+        <oj-slot name="toolbar" />
+    </div>
+</div>
+<div class="ui-panel-main" data-bind="css: mainClass">
+    <div>
+        <oj-slot />
+    </div>
+</div>
+</oj-collapsible>

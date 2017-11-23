@@ -1,0 +1,25 @@
+{
+    "name": "overview-card",
+    "description": "Overview card",
+    "version": "1.0.0",
+    "properties":  {
+        "name": {
+            "type": "string"
+        },
+        "maincolor": {
+            "type": "string"
+        },
+        "highlight": {
+            "type": "string"
+        },
+        "observables": {
+            "type": "object"
+        },
+        "clicked": {
+            "type": "function"
+        },
+        "icon": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,73 @@
+ui-panel { /* Panes which contain the content for the dashboard. E.g. "contacts" or "activities", on dashboard page */
+    display: block;
+}
+
+ui-panel oj-collapsible {
+    background-color: #FFFFFF;
+}
+
+/* But some panes (currently just login pane) make use of a progress bar. Progress bar goes in the same place as the top border
+ * and looks similar to the top border but its width and colour should change to indicate progress. See login pane for example.
+ * You may want to use js/libs/crm/progress.js to update the progress bar */
+.ui-panel-progressbar {
+    height: 3px;
+    background-color: #D2D6DE;
+    width: 100%;
+}
+
+/* A ui-panel div (pane) should contain a ui-panel-title div and a ui-panel-main div*/
+.ui-panel-title {
+    background-color: #FFFFFF;
+    width: auto;
+    padding: 5px 10px 15px 10px;
+    border-bottom: solid 1px #F7F7F7;
+}
+
+.ui-panel-title h3 {
+  margin: 0;
+}
+
+#dashboard .ui-panel-title {
+    padding-bottom: 5px;
+}
+/* Title div should contains an h3 element, which serves as the title for the pane */
+.ui-panel-title h3 {
+    display: inline-block;
+    font-family: "Source Sans Pro",sans-serif;
+    font-size: 18px;
+}
+
+/* A failed attempt to get a "minimise" button into the title section of a pane. Failed because apparently CSS doesn't like
+ * aligning elements to the right while also centering them horizontally. I just gave up eventually.
+ * Relevant: https://imgur.com/Q3cUg29 */
+.ui-panel-title input {
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    color: gray;
+    float: right;
+}
+
+/* Contains the main content for a pane */
+.ui-panel-main {
+    background-color: #FFFFFF;
+    padding: 0 10px 10px;
+/*    max-height: 350px;
+    overflow: scroll;*/
+}
+
+.ui-panel-toolbar a {
+    display: inline-block;
+    margin: 2px;
+    margin-left: 10px !important;
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+}
+
+ui-panel .oj-expanded .ui-panel-toolbar {
+    display: block
+}
+ui-panel .oj-collapsed .ui-panel-toolbar {
+    display: none
+}

@@ -1,0 +1,43 @@
+<div style="display: none" title="Address Book Search"
+     data-bind="attr: { 'id': id() + '-dialog' }, ojComponent: {component: 'ojDialog', initialVisibility: 'hide', rootAttributes: { style: 'width: 100vh; height: 75vh;'}}">
+     <div class="oj-dialog-body oj-flex oj-sm-justify-content-center">
+        <i class="fa fa-check fa-2x oj-flex-item oj-sm-1" data-bind="click: confirmAddress" aria-hidden="true"></i>
+        <i class="fa fa-search fa-2x oj-flex-item oj-sm-1" data-bind="click: searchAddress" aria-hidden="true"></i>
+        <input class="oj-flex-item oj-sm-10" id="search-number" type="text" placeholder="Name" data-bind="ojComponent: {component: 'ojInputText', value: searchName}" />
+       <!-- ko if: filledTable -->
+       <table class="oj-flex-item oj-sm-12" 
+          data-bind="ojComponent: {
+            component: 'ojTable',
+            beforeCurrentRow: selectRow,
+            display: 'grid',
+            data: datasource,
+            selectionMode: {row: 'single', column: 'multiple'},
+            columns: headerArray,
+            rootAttributes: { style: 'max-width: 75vh; max-height: 50vh;'}
+          }">
+       </table>
+       <!-- /ko -->
+     </div>
+</div>
+<!-- ko if: disabled -->
+<input data-bind="ojComponent: { component: 'ojInputText', value: observable}, attr: { 'id': id, 'disabled': true}" />
+<!-- /ko -->
+
+<!-- ko ifnot: disabled -->
+
+  <!-- ko if: addressBookData == addressBookMasterData -->
+  <input data-bind="ojComponent: { component: 'ojCombobox', options: customerOptions, optionChange: displayName, optionTemplate: 'optionTemp', value: observable, required: isRequired, invalidComponentTracker: validation.tracker, 'placeholder': label, rootAttributes: {style: 'max-width: 80%'}}, attr: { 'id': id}" />
+  <!-- /ko -->
+
+  <!-- ko if: addressBookData == addressContactData -->
+  <input data-bind="ojComponent: { component: 'ojInputText', value: observable, required: isRequired, invalidComponentTracker: validation.tracker, 'placeholder': label, rootAttributes: {style: 'max-width: 80%'}}, attr: { 'id': id}" />
+  <!-- /ko -->
+
+  <i class="fa fa-search" data-bind="click: openAddressBook" aria-hidden="true"></i></br>
+  <i data-bind="text: alphaName"></i>
+<!-- /ko -->
+
+<script type="text/html" id="optionTemp">
+  <span data-bind="text: addressNum"></span>,
+  <span data-bind="text: addressName"></span>
+</script>

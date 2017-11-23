@@ -1,0 +1,33 @@
+<div class="smart-shop">
+    <h1>SMART SHOP</h1>
+    <br>
+    <br>
+    <h3>EXISTING STORES</h3>
+    <table id="text-brand">
+    <thead>
+        <th>Store Location</th>
+        <th>Stock Level</th>
+
+    </thead>
+    <!-- <th>AUTO SHOPS AND REPAIR</th> -->
+    <tbody data-bind="foreach: storeData">
+        <td data-bind="text: store_location"></td>
+        <td data-bind="text: stock"></td>
+<!--        <td data-bind="text: size"></td>-->
+    </tbody>
+</table>
+  <h3>POTENTIAL STORES</h3>
+  <table id="text-brand">
+  <thead>
+      <th>Store Location</th>
+      <th>Stock Level</th>
+
+  </thead>
+  <!-- <th>AUTO SHOPS AND REPAIR</th> -->
+  <tbody data-bind="foreach: locationData">
+      <td data-bind="text: customers_locations"></td>
+      <!-- <td data-bind="text: stock"></td> -->
+<!--        <td data-bind="text: size"></td>-->
+  </tbody>
+</table>
+</div>

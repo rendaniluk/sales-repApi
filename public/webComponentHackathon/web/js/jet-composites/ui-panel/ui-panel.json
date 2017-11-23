@@ -1,0 +1,24 @@
+{
+    "name": "ui-panel",
+    "description": "UI Panel",
+    "version": "1.0.0",
+    "properties":  {
+        "title": {
+            "type": "string"
+        },
+        "titleClass": {
+            "type": "string"
+        },
+        "mainClass": {
+            "type": "string"
+        },
+        "progressId": {
+            "type": "string"
+        }
+    },
+    "slots" : {
+        "toolbar":{
+          "description" : "Put your customized toolbar here"
+        }
+      }
+}

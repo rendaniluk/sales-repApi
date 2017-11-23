@@ -1,0 +1,13 @@
+{
+    "name": "data-search",
+    "description": "Dialogue for searching data",
+    "version": "1.0.0",
+    "properties":  {
+        "addressbook": {
+            "type": "object"
+        },
+      "validation": {
+        "type": "object"
+      }
+    }
+}
