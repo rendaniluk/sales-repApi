@@ -52,7 +52,7 @@ var items;
          url: "https://tyre-api.herokuapp.com/api/shops/",
          type: 'get',
          success: function(result) {
-
+                console.log(result);
            // console.log("get Locations"+result);
            var allLocations = []
            for (var i = 0; i < result.length; i++) {
