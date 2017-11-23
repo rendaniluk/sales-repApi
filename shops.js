@@ -55,7 +55,10 @@ module.exports = function(models) {
 
   const addCustomer = function(req, res, next) {
 
-    var locationFrom = req.body.customers_locations;
+
+    console.log(req.body);
+
+    var locationFrom = req.body.customer_locations;
 
     var theLocation = {
       name : locationFrom,
