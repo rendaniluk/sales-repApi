@@ -1,4 +1,4 @@
-.filter-table .oj-table {
+.customer-locations .oj-table {
   display: block;
   max-height: 550px;
   overflow: scroll;
@@ -8,78 +8,78 @@
   height: 100%;
 }
 
-.filter-table td {
+.customer-locations td {
   padding: 5px;
 }
 
-.filter-table-cell {
+.customer-locations-cell {
   background-color: white;
 }
 
-.filter-table-header {
+.customer-locations-header {
   background-color: #f1f3f8;
 }
 
-.filter-table-error {
+.customer-locations-error {
   background-color: tomato;
 }
 
-.filter-table table,
-.filter-table input {
+.customer-locations table,
+.customer-locations input {
   width: 95%
 }
-.filter-table input {
+.customer-locations input {
   margin-top: 10px;
 }
 
-.filter-table tr {
+.customer-locations tr {
   cursor: pointer;
   color: #333;
 }
 
-#customers .filter-table .oj-selected {
+#customers .customer-locations .oj-selected {
   background: #00C0EF;
   color: #FFFFFF;
   opacity: 0.8;
 }
 
-#contacts .filter-table .oj-selected {
+#contacts .customer-locations .oj-selected {
   background: #9A53B0;
   color: #FFFFFF;
   opacity: 0.8;
 }
 
-#leads .filter-table .oj-selected {
+#leads .customer-locations .oj-selected {
   background: #F39C12;
   color: #FFFFFF;
   opacity: 0.8;
 }
-#activities .filter-table .oj-selected {
+#activities .customer-locations .oj-selected {
   background: #00A65A;
   color: #FFFFFF;
   opacity: 0.8;
 }
 
 
-#customers .filter-table .oj-table-body-row.oj-hover {
+#customers .customer-locations .oj-table-body-row.oj-hover {
   background: #00C0EF;
   color: #FFFFFF;
   opacity: 0.5;
 }
 
-#contacts .filter-table .oj-table-body-row.oj-hover {
+#contacts .customer-locations .oj-table-body-row.oj-hover {
   background: #9A53B0;
   color: #FFFFFF;
   opacity: 0.5;
 }
 
-#activities .filter-table .oj-table-body-row.oj-hover {
+#activities .customer-locations .oj-table-body-row.oj-hover {
   background: #00A65A;
   color: #FFFFFF;
   opacity: 0.5;
 }
 
-#leads .filter-table .oj-table-body-row.oj-hover {
+#leads .customer-locations .oj-table-body-row.oj-hover {
   background: #F39C12;
   color: #FFFFFF;
   opacity: 0.5;

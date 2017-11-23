@@ -1,4 +1,4 @@
-.customer-locations .oj-table {
+.stock-level .oj-table {
   display: block;
   max-height: 550px;
   overflow: scroll;
@@ -8,78 +8,78 @@
   height: 100%;
 }
 
-.customer-locations td {
+.stock-level td {
   padding: 5px;
 }
 
-.customer-locations-cell {
+.stock-level-cell {
   background-color: white;
 }
 
-.customer-locations-header {
+.stock-level-header {
   background-color: #f1f3f8;
 }
 
-.customer-locations-error {
+.stock-level-error {
   background-color: tomato;
 }
 
-.customer-locations table,
-.customer-locations input {
+.stock-level table,
+.stock-level input {
   width: 95%
 }
-.customer-locations input {
+.stock-level input {
   margin-top: 10px;
 }
 
-.customer-locations tr {
+.stock-level tr {
   cursor: pointer;
   color: #333;
 }
 
-#customers .customer-locations .oj-selected {
+#customers .stock-level .oj-selected {
   background: #00C0EF;
   color: #FFFFFF;
   opacity: 0.8;
 }
 
-#contacts .customer-locations .oj-selected {
+#contacts .stock-level .oj-selected {
   background: #9A53B0;
   color: #FFFFFF;
   opacity: 0.8;
 }
 
-#leads .customer-locations .oj-selected {
+#leads .stock-level .oj-selected {
   background: #F39C12;
   color: #FFFFFF;
   opacity: 0.8;
 }
-#activities .customer-locations .oj-selected {
+#activities .stock-level .oj-selected {
   background: #00A65A;
   color: #FFFFFF;
   opacity: 0.8;
 }
 
 
-#customers .customer-locations .oj-table-body-row.oj-hover {
+#customers .stock-level .oj-table-body-row.oj-hover {
   background: #00C0EF;
   color: #FFFFFF;
   opacity: 0.5;
 }
 
-#contacts .customer-locations .oj-table-body-row.oj-hover {
+#contacts .stock-level .oj-table-body-row.oj-hover {
   background: #9A53B0;
   color: #FFFFFF;
   opacity: 0.5;
 }
 
-#activities .customer-locations .oj-table-body-row.oj-hover {
+#activities .stock-level .oj-table-body-row.oj-hover {
   background: #00A65A;
   color: #FFFFFF;
   opacity: 0.5;
 }
 
-#leads .customer-locations .oj-table-body-row.oj-hover {
+#leads .stock-level .oj-table-body-row.oj-hover {
   background: #F39C12;
   color: #FFFFFF;
   opacity: 0.5;

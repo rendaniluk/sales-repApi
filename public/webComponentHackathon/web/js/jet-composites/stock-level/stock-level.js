@@ -10,7 +10,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtable', 'ojs/ojarraytabledata
                 self.datasource = ko.observable();
 
                 // do the filtering in a new worker 2thread
-                var worker = new Worker("js/jet-composites/customer-locations/search.js");
+                var worker = new Worker("js/jet-composites/stock-level/search.js");
 
                 // override the displose method of the component
                 self.dispose = function() {
@@ -85,7 +85,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojtable', 'ojs/ojarraytabledata
                       }
 
                     } else {
-                        console.error("ERROR: must pass 'data' parameter to customer-locations. data is an object containing 'headers' (array) and 'rows' (observableArray)");
+                        console.error("ERROR: must pass 'data' parameter to stock-level. data is an object containing 'headers' (array) and 'rows' (observableArray)");
                     }
                 });
         }
